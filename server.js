@@ -10,8 +10,11 @@ app.use(cors());
 
 connectDB();
 
+app.use("/api/school", require("./Server/API/routes/school"));
+app.use("/api/student", require("./Server/API/routes/student"))
+
 const PORT = process.env.PORT;
 // Port
-app.listen(PORT, ()=> {
-    console.log(`===> Listening to Port ${PORT}`)
+app.listen(PORT, () => {
+   console.log(`===> Listening to Port ${PORT}`);
 });
