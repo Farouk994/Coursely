@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const SchoolSchema = new mongoose.Schema({
-   user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
-   },
    name: {
       type: String,
    },
@@ -32,11 +28,9 @@ const SchoolSchema = new mongoose.Schema({
                subject: {
                   type: String,
                },
-            },
-            {
                grade: {
-                  type: Number,
-               },
+                type: Number,
+             },
             },
          ],
          city: {
