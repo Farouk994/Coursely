@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
-const SchoolSchema = new mongoose.Schema({
-   user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
-   },
+const StudentSchema = new mongoose.Schema({
    name: {
       type: String,
    },
@@ -13,8 +9,6 @@ const SchoolSchema = new mongoose.Schema({
          subject: {
             type: String,
          },
-      },
-      {
          grade: {
             type: Number,
          },
@@ -28,6 +22,6 @@ const SchoolSchema = new mongoose.Schema({
    },
 });
 
-const school = mongoose.model("school", SchoolSchema);
+const student = mongoose.model("student", StudentSchema);
 
-module.exports = school;
+module.exports = student;
