@@ -22,9 +22,9 @@ exports.add_school = async (req, res) => {
    try {
       // TODO: Will add User when i set up admin functionality
       const newSchool = new School({
-         name: "Bernade Point High",
-         description: "School of the Heroes",
-         location: "Los Angeles",
+         name: req.body.name,
+         description: req.body.description,
+         location:req.body.location,
       });
       const school = await newSchool.save();
       res.json(school);
@@ -60,13 +60,13 @@ exports.get_school_byId = async (req, res) => {
    }
 };
 
-//? @route Post api/school/add/:id
+//? @route Post api/school/add/:schoolid
 //? @desc Add student to school
 //? @access Private/Public
 
 exports.add_student_to_school = async (req, res) => {
    try {
-      const school = await School.findById(req.params.id);
+      const school = await School.findById(req.params.schoolid);
       if (!school) {
          res.status(404).json({ msg: "School not found, try again" });
       }
@@ -74,14 +74,17 @@ exports.add_student_to_school = async (req, res) => {
 
       const newStudent = {
          name: req.body.name,
-         city: req.body.city,
-         user: req.user.id,
          school: school.name,
+         city: req.body.city,
+         course: {
+            subject: req.body.subject,
+            grade: req.body.grade,
+         },
       };
 
       school.students.unshift(newStudent);
       await school.save();
-      res.json(school);
+      res.json({ school: school.toObject({ getters: true }) });
       console.log(newStudent);
    } catch (err) {
       res.status(500).send("Server Error, try again");
