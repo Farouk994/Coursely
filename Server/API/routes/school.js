@@ -9,6 +9,6 @@ router.get("/all", SchoolController.schools_get_all);
 
 router.get("/:schoolid", SchoolController.get_school_byId);
 
-router.post("/add/:id", SchoolController.add_student_to_school);
+router.post("/add/:schoolid", SchoolController.add_student_to_school);
 
 module.exports = router;
