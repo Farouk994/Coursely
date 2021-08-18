@@ -14,7 +14,6 @@ const GetSchool = () => {
    const handleExportWithComponent = (event) => {
       pdfExportComponent.current.save();
    };
-console.log(school);
    useEffect(() => {
       async function fetchData() {
          await axios
