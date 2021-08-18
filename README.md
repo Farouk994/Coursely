@@ -64,7 +64,6 @@ A first time user opens the application and searches or accesses drop down menu 
 
 Heroku was used for app deployment.
 
-<!-- Click [here](https://project2nashfaroukroy.herokuapp.com/) to deploy. -->
 
 ### Screenshots
 
@@ -77,7 +76,7 @@ Heroku was used for app deployment.
 <details>
   <summary>Home Page with search school Functionality and navigation</summary>
   <img src="./client/public/images/home.png" alt= "new profile page">
-  <!-- <img src="./client/public/images/home.png" alt= "profile page with wallets"> -->
+
 </details>
 <details>
   <summary>All schools</summary>
