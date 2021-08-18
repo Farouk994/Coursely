@@ -39,6 +39,9 @@ const SchoolSchema = new mongoose.Schema({
          school: {
             type: String,
          },
+         ID : {
+            type : String,
+         }
       },
    ],
 });

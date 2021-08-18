@@ -20,6 +20,9 @@ const StudentSchema = new mongoose.Schema({
    school: {
       type: String,
    },
+   ID : {
+      type : String,
+   }
 });
 
 const student = mongoose.model("student", StudentSchema);
