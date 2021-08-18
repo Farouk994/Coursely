@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "./School.css";
+import GetSchoolInfo from "./showAllData";
 
 const SchoolCard = () => {
    const [schools, setSchool] = useState([]);
+   const [displaySchool, toggleSchool] = useState(false);
 
    useEffect(() => {
       async function fetchData() {
@@ -41,25 +42,16 @@ const SchoolCard = () => {
                         <li>Students</li>
                      </ul>
                      <div>
-                        <a href="/login">
+                        <div className="my-2">
                            <button
-                              className="btn save"
-                              // onclick="this.blur()"
-                              style={{ color: "limegreen" }}
+                              onClick={() => toggleSchool(!displaySchool)}
+                              type="button"
+                              className="btn btn-warning"
                            >
-                              <Link to="/getschool">
-                                 Get Report
-                              </Link>
+                              Get Report
                            </button>
-                        </a>
-                        <a href="/register">
-                           <button
-                              className="btn delete"
-                              style={{ color: "crimson" }}
-                           >
-                              X
-                           </button>
-                        </a>
+                        </div>
+                        {displaySchool && <GetSchoolInfo />}
                      </div>
                   </div>
                   <br></br>
