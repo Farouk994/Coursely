@@ -40,7 +40,7 @@ function Navbar() {
             <li className='nav-item'>
               <NavLink
                 exact
-                to='/member'
+                to='/schoolreport'
                 activeClassName='active'
                 className='nav-links'
                 onClick={handleClick}
