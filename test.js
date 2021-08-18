@@ -37,6 +37,7 @@ describe("GET /api/school/all", function () {
 
 describe("POST /api/school/new", function () {
    before((done) => {
+      // ! An error of connect is not function appears, needs to be fixed
       /* Todo: Clean up Database*/
       // chai
       //    .connect()
@@ -64,3 +65,5 @@ describe("POST /api/school/new", function () {
       done();
    });
 });
+
+
