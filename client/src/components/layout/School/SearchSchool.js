@@ -1,32 +1,13 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const SearchSchool = () => {
    const [formData, setFormData] = useState({
-      search: "",
+      school: "",
+      city: "",
+      students: "",
    });
-
-   const { search } = formData;
-
-   const onChange = (e) =>
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-
-   const onSubmit = async (e) => {
-      e.preventDefault();
-
-      const newUser = {
-         search,
-      };
-      try {
-         const body = JSON.stringify(newUser);
-         const res = await axios.post("api/schools", body);
-         console.log(res.data);
-      } catch (err) {
-         console.log(err.response.data);
-      }
-   };
 
    return (
       <div>
@@ -37,9 +18,10 @@ const SearchSchool = () => {
                   <input
                      type="text"
                      name="search_text"
-                     placeholder="Search School"
+                     id="search_text"
+                     placeholder="Search"
                   />
-                  <button
+                  <input
                      type="button"
                      name="search_button"
                      id="search_button"
@@ -47,21 +29,16 @@ const SearchSchool = () => {
                </form>
             </li>
             <li id="options">
-               <a href="/">Schools</a>
+               <Link to="#">Search</Link>
                <ul class="subnav">
                   <li>
-                     <a href="/"></a>
+                     <Link to="/getschool">Pokemon High</Link>
                   </li>
                   <li>
-                     <a href="/"></a>
+                     <Link to="#">St Peters High</Link>
                   </li>
                   <li>
-                     <a href="/"></a>
-                  </li>
-                  <li>
-                     <Link to="/school" style={{ color: "red" }}>
-                        View all schools
-                     </Link>
+                     <Link to="/school">All schools</Link>
                   </li>
                </ul>
             </li>
