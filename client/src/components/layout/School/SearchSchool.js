@@ -11,7 +11,7 @@ const SearchSchool = () => {
 
    // ! So far i can only get school by one particular id, it seems my front end may have to be
    // ! more detailed regarding id parameter that is passed in, but so far the request
-   // ! is made but the end point only appears to be from one end point
+   // ! is made but the end point only appears to be from one end point.
 
    return (
       <div>
