@@ -1,11 +1,11 @@
-const mongoose = require("mongoose").set("debug", true);;
+const mongoose = require("mongoose").set("debug", true);
 const config = require("config");
 
 // Get
 const db = config.get("mongoURI");
 
 // Connection to database
-const connectDB = async () => {
+async function connectDB(){
    try {
       await mongoose.connect(db, {
          useNewUrlParser: true,
@@ -20,4 +20,10 @@ const connectDB = async () => {
    }
 };
 
-module.exports = connectDB;
+
+function close() {
+   return mongoose.disconnect();
+}
+
+module.exports =  connectDB;
+
