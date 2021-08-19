@@ -60,10 +60,6 @@ A first time user opens the application and searches or accesses drop down menu 
 
 2. The user is able to access report and downloads it in their browser
 
-### Deployment and Demo
-
-Heroku was used for app deployment.
-
 
 ### Screenshots
 
